@@ -1,0 +1,164 @@
+/* ============================================
+   PrepVault — Obsidian CSS Snippets
+   Interview-note cards, tables, tags, badges
+   ============================================ */
+
+/* ---- Badge-style inline tags ---- */
+a.tag[href^="#foundations"] {
+  background-color: #6c63ff;
+  color: #fff !important;
+  border-radius: 12px;
+  padding: 1px 8px;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+a.tag[href^="#role"] {
+  background-color: #e76f51;
+  color: #fff !important;
+  border-radius: 12px;
+  padding: 1px 8px;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+a.tag[href^="#interview"] {
+  background-color: #2a9d8f;
+  color: #fff !important;
+  border-radius: 12px;
+  padding: 1px 8px;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+a.tag {
+  border: none;
+  text-decoration: none;
+}
+a.tag:hover {
+  filter: brightness(1.2);
+}
+
+/* ---- Note card styling for interview questions ---- */
+.cm-line:has(> h1:only-child) + p,
+h1 + p {
+  background: var(--background-primary-alt);
+  border-left: 4px solid var(--interactive-accent);
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+/* ---- Concept boxes ---- */
+blockquote:has(strong:contains("Key")) {
+  border-left: 4px solid var(--color-yellow);
+  background: var(--background-secondary);
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+/* ---- Better tables ---- */
+.markdown-preview-view table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0;
+  font-size: 0.9em;
+}
+.markdown-preview-view th {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  font-weight: 600;
+  padding: 8px 12px;
+  text-align: left;
+}
+.markdown-preview-view td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+.markdown-preview-view tr:nth-child(even) {
+  background-color: var(--background-primary-alt);
+}
+.markdown-preview-view tr:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+/* ---- Callout-style info blocks ---- */
+.info-box {
+  background: var(--background-primary-alt);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 12px 0;
+}
+.info-box strong:first-child {
+  display: block;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+/* ---- List styling for interview roadmaps ---- */
+ul.contains-task-list {
+  list-style: none;
+  padding-left: 0;
+}
+ul.contains-task-list li {
+  padding: 4px 0;
+}
+
+/* ---- Role track section badges ---- */
+.role-badge {
+  display: inline-block;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  font-size: 0.75em;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Code blocks ---- */
+.markdown-preview-view pre {
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+}
+.markdown-preview-view code {
+  font-size: 0.85em;
+  background: var(--background-primary-alt);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* ---- Backlinks panel ---- */
+.embedded-backlinks {
+  border-top: 2px solid var(--background-modifier-border);
+  margin-top: 24px;
+  padding-top: 16px;
+}
+
+/* ---- Reading mode ---- */
+.markdown-preview-view h1 {
+  border-bottom: 2px solid var(--interactive-accent);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+.markdown-preview-view h2 {
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 4px;
+  margin-top: 24px;
+}
+
+/* ---- Frontmatter tags in preview ---- */
+.metadata-properties {
+  background: var(--background-primary-alt);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+}

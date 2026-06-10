@@ -1,0 +1,15 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Obsidian workspace cache
+.obsidian/workspace.json
+.obsidian/workspace
+
+# Research source (already processed into vault)
+Software Job Preparation Mastery*.md

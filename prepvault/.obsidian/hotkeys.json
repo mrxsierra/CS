@@ -1,0 +1,38 @@
+{
+  "editor:focus": [
+    {
+      "modifiers": ["Mod"],
+      "key": "e"
+    }
+  ],
+  "editor:insert-wikilink": [
+    {
+      "modifiers": ["Mod", "Shift"],
+      "key": "k"
+    }
+  ],
+  "global-search:open": [
+    {
+      "modifiers": ["Mod", "Shift"],
+      "key": "f"
+    }
+  ],
+  "graph-view:open": [
+    {
+      "modifiers": ["Mod", "Shift"],
+      "key": "g"
+    }
+  ],
+  "outline:open": [
+    {
+      "modifiers": ["Mod", "Shift"],
+      "key": "o"
+    }
+  ],
+  "templates:insert-template": [
+    {
+      "modifiers": ["Mod"],
+      "key": "t"
+    }
+  ]
+}

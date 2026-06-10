@@ -1,0 +1,15 @@
+{
+  "accentColor": "#6c63ff",
+  "baseFontSize": 16,
+  "baseFontSizeAction": true,
+  "cssTheme": "Obsidian Default",
+  "enabledCssSnippets": [
+    "obsidian-snippets"
+  ],
+  "interfaceFontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+  "monospaceFontFamily": "JetBrains Mono, Fira Code, Cascadia Code, Consolas, monospace",
+  "nativeMenus": true,
+  "showViewHeader": true,
+  "textFontFamily": "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+  "theme": "system"
+}
