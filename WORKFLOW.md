@@ -1,12 +1,14 @@
 # PrepVault Code Workflow
 
 ## Repository
-- **Remote**: `mrxsierra/CS`
+- **Remote**: `https://github.com/mrxsierra/CS.git` (HTTPS with stored credentials)
 - **Local**: `/home/team/shared/` (git root)
 - **Vault content**: `/home/team/shared/prepvault/`
+- **Credentials**: Stored in `~/.git-credentials` (600 permissions)
+- **Lead push command**: `git push` (no auth needed — credentials stored)
 
 ## Commit Strategy: Milestone-Based
-We commit after every major milestone or completed task. Each commit should represent a coherent unit of work.
+Commit after every major milestone or completed task. Each commit represents a coherent unit of work.
 
 ### Commit Message Format
 ```
@@ -31,6 +33,6 @@ type(scope): brief description
 Not required for content additions — push directly. Use PRs only for structural changes that need review.
 
 ## After Each Completed Task
-1. Stage all relevant changes
-2. Commit with a clear milestone message
-3. Push to origin/main
+1. Stage all relevant changes: `cd /home/team/shared && git add -A`
+2. Commit with a clear milestone message: `git commit -m "type(scope): description"`
+3. Push to origin/main: `git push`
