@@ -101,14 +101,41 @@ Most tech giants (Amazon, Meta, Netflix) rely on these:
 -   **Tasks:** Image Classification, Object Detection (YOLO, Faster R-CNN), Semantic Segmentation (U-Net).
 
 ### Deep Dive 4: MLOps, Infrastructure, and Scalability
--   **Distributed Training:** Data Parallelism vs Model Parallelism.
--   **Model Serving:** Serving via REST/gRPC. Latency vs Throughput tradeoffs.
--   **Monitoring:** Detecting **Data Drift** (input changes) and **Concept Drift** (target relationship changes).
--   **Optimization:** Quantization (Float32 -> INT8), Pruning (removing weights), and Distillation.
+-   **Distributed Training:** Data Parallelism (DP) vs. Model Parallelism (MP). Understanding Zero Redundancy Optimizer (ZeRO) and how to train models that don't fit on one GPU.
+-   **Model Serving:** Serving via REST/gRPC. Latency (ms per request) vs. Throughput (requests per second) tradeoffs.
+-   **Monitoring:** Detecting **Data Drift** (input distribution changes) and **Concept Drift** (target relationship changes). Setting up alerts for prediction anomalies.
+-   **Optimization:** Quantization (Float32 -> INT8/FP8), Pruning (removing unimportant weights), and Knowledge Distillation (training a smaller "student" model from a large "teacher").
+-   **High-Performance Inference**: Mastering request batching, model pipelining, and using specialized hardware (TPUs/NPUs) for low-latency production needs.
+
+### Deep Dive 5: Generative AI & LLM Engineering (2026-27 Special)
+- **RAG (Retrieval-Augmented Generation)**:
+    - **Chunking Strategies**: Fixed-size vs. Semantic chunking.
+    - **Vector DBs**: Indexing methods like HNSW and IVF.
+    - **Reranking**: Using a Cross-Encoder to refine retrieved documents.
+- **Fine-Tuning**: 
+    - **PEFT (Parameter-Efficient Fine-Tuning)**: LoRA, QLoRA, and Prefix Tuning.
+    - **RLHF**: Reinforcement Learning from Human Feedback.
+- **LLM Evaluation**: Using G-Eval, RAGAS, or "LLM-as-a-judge" to measure hallucination and faithfulness.
+- **Agentic Workflows**: Designing multi-agent systems where LLMs use tools to solve complex, multi-step tasks.
+
+### Deep Dive 6: Ethics, Fairness, and Explainability
+- **Bias in Data**: How historical prejudices end up in models and how to mitigate them (Preprocessing, In-processing, Post-processing).
+- **Interpretability**: SHAP (Shapley Additive Explanations) and LIME (Local Interpretable Model-agnostic Explanations) for "black box" models.
+- **Privacy**: Differential Privacy and Federated Learning for secure model training.
+- **Regulatory Compliance**: Understanding the EU AI Act and how it affects model development and deployment in global markets.
 
 ---
 
-## 5. Common Interview Questions & Detailed Walkthroughs
+## 5. Feature Engineering at Scale
+In production, features are often served from a **Feature Store** (e.g., Feast, Tecton).
+- **Online vs. Offline Features**: Batch processing (Hive/Spark) for training vs. Real-time processing (Flink/Redis) for inference.
+- **Time-Travel Debugging**: Ensuring that you only use features that were available *at the time of the event* to prevent data leakage.
+- **Automatic Feature Selection**: Boruta, Recursive Feature Elimination (RFE), and L1-based selection (Lasso).
+- **Domain-Specific Transformations**: Handling geospatial data (H3/S2), time-series (Fourier transforms), and graph embeddings.
+
+---
+
+## 6. Common Interview Questions & Detailed Walkthroughs
 
 ### Applied Coding 1: Implement Logistic Regression (NumPy)
 **Problem:** Write a class that trains a logistic regression model.
@@ -123,15 +150,65 @@ Most tech giants (Amazon, Meta, Netflix) rely on these:
 ### ML System Design: "Design a News Feed Ranking System"
 1.  **Objective:** Rank posts to maximize user engagement (likes, shares, time spent).
 2.  **Architecture:**
-    -   **Retrieval:** Use simple models or heuristics to get 1000 candidate posts.
-    -   **Ranking:** Use a deep neural network to score each post.
-    -   **Re-ranking:** Apply diversity filters (no two posts from same user) and business rules.
+    -   **Retrieval:** Use simple models (e.g., Matrix Factorization) or heuristics to get 1000 candidate posts.
+    -   **Ranking:** Use a deep neural network (e.g., Wide & Deep or DCN) to score each post.
+    -   **Re-ranking:** Apply diversity filters (no two posts from same user) and business rules (ads, safety).
 3.  **Features:** User history, post age, post type (video/image), social connection strength.
 4.  **Metric:** Online A/B test for Daily Active Users (DAU) and CTR.
 
+### ML System Design: "Design a Self-Driving Car Perception System"
+1. **Objective**: Detect and track obstacles (cars, pedestrians, lanes) in real-time with 99.999% reliability.
+2. **Architecture**:
+    - **Sensors**: Multi-modal fusion (LiDAR, Radar, Cameras).
+    - **Backbone**: CNN-based feature extraction (ResNet/EfficientNet).
+    - **Head**: Multiple heads for Detection (3D Bounding Boxes), Segmentation (Lanes), and Prediction (Future trajectories).
+3. **Challenges**:
+    - **Latency**: Processing must happen in < 100ms.
+    - **Edge Cases**: Heavy rain, snow, or occluded objects.
+4. **Validation**: Hardware-in-the-loop (HIL) testing and shadow mode deployments.
+
+### Applied Coding 2: Implement K-Means Clustering (NumPy)
+1. **Initialize**: Pick $K$ random points as centroids.
+2. **Assign**: For each data point, find the nearest centroid based on Euclidean distance.
+3. **Update**: Calculate the mean of all points assigned to each centroid and move the centroid to that mean.
+4. **Repeat**: Until centroids no longer move or max iterations reached.
+*Interview Tip: Discuss how to choose $K$ using the Elbow Method or Silhouette Score.*
+
 ---
 
-## 6. Machine Learning Glossary
+## 9. Top 10 Essential ML Concepts
+1. **The Bias-Variance Tradeoff:** Understanding why a model that is too simple misses patterns and a model that is too complex learns noise.
+2. **Gradient Descent:** The engine of optimization. Master Stochastic Gradient Descent (SGD) and Adam.
+3. **Overfitting & Regularization:** Using L1 (Lasso), L2 (Ridge), and Dropout to ensure generalization.
+4. **The Attention Mechanism:** How Transformers revolutionize NLP and Vision.
+5. **Precision-Recall Tradeoff:** Choosing the right metric for the business case (e.g., medical diagnosis vs. spam filtering).
+6. **Feature Engineering:** Creating value from raw data through transformations, scaling, and encoding.
+7. **Cross-Validation:** Ensuring your model's performance isn't just a result of a "lucky" train-test split.
+8. **Ensemble Learning:** Combining weak learners (trees) into strong models (Random Forest, XGBoost).
+9. **Backpropagation:** The chain-rule based algorithm that allows neural networks to update their weights.
+10. **Data Leakage:** Identifying and preventing the use of information in training that wouldn't be available at prediction time.
+
+---
+
+## 10. Success Patterns for ML Interviews
+- **Clarify the Metric:** "Are we optimizing for CTR or watch time?"
+- **Always Start Simple:** Propose a Logistic Regression baseline before jumping to a Transformer.
+- **Think End-to-End:** Discuss how the data is collected, how the model is served, and how performance is monitored.
+- **Whiteboard the Math:** Be ready to write out the loss function for SVMs or the softmax equation.
+- **Be Practical:** If a model is 1% more accurate but 10x slower, mention that tradeoff.
+
+---
+
+## 11. Recommended Reading List
+- *Hands-On Machine Learning* by Aurélien Géron.
+- *Deep Learning* by Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+- *The Hundred-Page Machine Learning Book* by Andriy Burkov.
+- *Machine Learning Engineering* by Andriy Burkov.
+- *Designing Machine Learning Systems* by Chip Huyen.
+
+---
+
+## 12. Machine Learning Glossary
 -   **Overfitting:** High variance; model learns noise in training data.
 -   **Underfitting:** High bias; model is too simple to learn the pattern.
 -   **Regularization:** Techniques (L1, L2, Dropout) used to prevent overfitting.

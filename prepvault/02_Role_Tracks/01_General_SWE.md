@@ -181,7 +181,32 @@ The "Generalist" round is often a test of communication.
 4.  **Phase 5: Behavioral & Mocks (Weeks 9-10):** Prepare 10-12 core stories using the STAR method. Map them to various Leadership Principles. Conduct 5+ mock interviews on Pramp or with friends.
 5.  **Phase 6: Refinement (Last week):** Re-do problems you struggled with. Review company-specific guides on Glassdoor/Blind. Rest and build confidence.
 
-## 8. Glossary of Terms
+---
+## 8. Top 10 Essential Generalist Concepts
+1. **Big-O Complexity:** The language used to evaluate algorithm efficiency.
+2. **Recursion & Memoization:** Solving complex problems by breaking them into overlapping sub-problems.
+3. **Pointers & Memory:** Understanding how data is stored in the Stack vs. the Heap.
+4. **Concurrency & Threading:** Managing multiple tasks simultaneously and avoiding race conditions.
+5. **Data Structures:** Choosing the right "tool" (HashMap, Tree, Queue) for the job.
+6. **API Design (REST/GraphQL):** How to structure communication between services.
+7. **Database Indexing:** How to speed up data retrieval.
+8. **Scalability Principles:** Caching, Load Balancing, and Sharding.
+9. **Testing Strategies:** Unit vs. Integration vs. End-to-End.
+10. **The SDLC:** How code goes from an idea to production.
+
+---
+
+## 9. Recommended Reading List
+- *Cracking the Coding Interview* by Gayle Laakmann McDowell.
+- *Introduction to Algorithms (CLRS)* (for deep theory).
+- *Designing Data-Intensive Applications* by Martin Kleppmann.
+- *Clean Code* by Robert C. Martin.
+- *The Pragmatic Programmer* by Andrew Hunt & David Thomas.
+
+---
+
+## 10. Glossary of Terms
+
 -   **Big-O:** A notation used to describe the efficiency of an algorithm.
 -   **Concurrency:** The ability of different parts or units of a program to be executed out-of-order or in partial order, without affecting the final outcome.
 -   **Idempotency:** A property of certain operations in mathematics and computer science whereby they can be applied multiple times without changing the result beyond the initial application.

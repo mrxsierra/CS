@@ -99,13 +99,41 @@ A common pattern in modern Data Engineering:
 -   *Benefit:* Extremely low impact on the source system's performance.
 
 ### Deep Dive 4: Data Quality, Reliability, and Mesh
--   **Validation:** Using frameworks like **Great Expectations** or **dbt tests** to ensure data meets business rules.
--   **Observability:** Monitoring for "Data Downtime" — when data is missing, late, or wrong.
--   **Data Mesh:** A decentralized architectural pattern where data is treated as a product and owned by the domain teams that produce it.
+-   **Validation:** Using frameworks like **Great Expectations** or **dbt tests** to ensure data meets business rules (e.g., "column X must never be null"). Implementing "Data Contracts" to prevent breaking upstream changes.
+-   **Data Observability:** Monitoring for "Data Downtime" — when data is missing, late, or wrong. Using tools like Monte Carlo or Bigeye to detect anomalies in data volume or distribution.
+-   **Data Mesh:** A decentralized architectural pattern where data is treated as a product and owned by the domain teams that produce it. Moving away from the "Centralized Data Team" bottleneck to a self-service model.
+-   **Data Lineage**: Tracking the flow of data from source to consumption. Essential for debugging and regulatory compliance (GDPR/HIPAA).
+
+### Deep Dive 5: Modern Data Stack (MDS) & dbt
+The "Analytics Engineer" workflow:
+- **dbt (data build tool)**: Transforming data using SQL and Jinja. Version controlling your transformations and automating documentation/testing.
+- **ELT vs. ETL**: Why modern warehouses prefer loading raw data first (ELT) and then transforming it using their own elastic compute (Snowflake/BigQuery).
+- **Data Governance**: Managing metadata, access control, and classification of sensitive data across the entire data lifecycle.
+- **Reverse ETL**: Syncing processed data from the warehouse back into operational tools (e.g., Salesforce, Zendesk) for business use.
+
+### Deep Dive 6: Advanced Data Modeling
+- **The Data Vault**: A modeling technique designed for long-term historical storage and scalability.
+- **Dimensional Modeling (Kimball)**: Focus on Facts and Dimensions for ease of use by analysts.
+- **One Big Table (OBT)**: When to denormalize everything for ultra-fast query performance in modern columnar warehouses.
+
+### Deep Dive 7: Data Governance, Privacy, and Ethics
+In 2026-27, a Data Engineer must be a guardian of data integrity and privacy.
+- **GDPR & HIPAA Compliance**: Implementing "Right to be Forgotten" (User deletion) and PII masking at the pipeline level.
+- **Access Control (RBAC/ABAC)**: Using tools like Apache Ranger or Immuta to manage fine-grained access to sensitive tables.
+- **Data Auditing**: Maintaining a trail of who accessed what data and when.
+- **Ethical AI Data**: Ensuring the datasets provided to ML models are representative and free from sampling bias.
 
 ---
 
-## 5. Common Interview Questions & Detailed Walkthroughs
+## 5. Big Data Performance Tuning
+Beyond simple query optimization.
+- **Data Skew**: Identifying and fixing skewed partitions using salting or specialized join strategies.
+- **Small File Problem**: How to compact millions of tiny files in a Data Lake to avoid metadata overhead.
+- **Vectorized Execution**: How modern engines (Trino, DuckDB) process batches of rows simultaneously using SIMD instructions.
+
+---
+
+## 6. Common Interview Questions & Detailed Walkthroughs
 
 ### SQL Scenario: "The Consecutive Login Problem"
 **Problem:** Find all users who logged in for 3 or more consecutive days.
@@ -115,11 +143,25 @@ A common pattern in modern Data Engineering:
 3.  If the resulting date (the "Anchor Date") is the same for multiple logins, they are consecutive.
 4.  Group by `user_id` and `anchor_date`, then `COUNT(*) >= 3`.
 
+### SQL Scenario: "User Retention Cohorts"
+**Problem**: Calculate the percentage of users who returned to the app 7 days after their first signup, grouped by signup month.
+**Solution**:
+1. **Find Signups**: Create a CTE to find the `signup_date` for each user.
+2. **Find Activity**: Join the signup CTE with the `activity_logs` table where `activity_date = signup_date + 7`.
+3. **Aggregate**: Group by `signup_month` and calculate `COUNT(retained_users) / COUNT(signed_up_users)`.
+
 ### Data System Design: "Real-time Ad Click Aggregator"
-1.  **Ingestion:** Kafka to handle high-volume event streams with multiple partitions for parallelism.
-2.  **Processing:** Apache Flink to aggregate clicks over a 1-minute tumbling window. Handle late data with a 5-second watermark.
-3.  **Storage:** Store aggregated results in a specialized OLAP store like Druid or ClickHouse for sub-second query performance.
-4.  **Fault Tolerance:** Use Flink's checkpointing to ensure "Exactly-Once" processing.
+1.  **Ingestion:** Kafka to handle high-volume event streams (100k+ events/sec) with multiple partitions for parallelism.
+2.  **Processing:** Apache Flink to aggregate clicks over a 1-minute tumbling window. Handle late data with a 5-second watermark to ensure accuracy.
+3.  **Storage:** Store aggregated results in a specialized OLAP store like Druid, ClickHouse, or Pinot for sub-second query performance on dashboards.
+4.  **Fault Tolerance:** Use Flink's checkpointing (Stateful functions) to ensure "Exactly-Once" processing semantics.
+
+### Practical Challenge: "Handling Data Backfills"
+**Problem**: You need to re-process 2 years of data because a bug was found in the transformation logic.
+**Solution**:
+1. **Idempotency**: Ensure your pipeline can be re-run for any date range without creating duplicate records.
+2. **Partition Overwrite**: Use Spark's dynamic partition overwrite to replace only the affected dates in S3/HDFS.
+3. **Resource Scaling**: Spin up a temporary, larger cluster to handle the massive backlog in a short time.
 
 ### Practical Challenge: "Data Skew in Spark"
 **Problem:** Your Spark job is slow because one task is taking 90% of the time while others are idle.

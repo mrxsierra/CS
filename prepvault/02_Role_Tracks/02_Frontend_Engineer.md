@@ -102,19 +102,48 @@ When building complex components, interviewers look for these patterns:
 
 ### Deep Dive 4: Frontend System Design (Micro-frontends & Libraries)
 Designing at scale:
--   **Micro-frontends:** Breaking a monolithic frontend into smaller, independent apps. Module Federation (Webpack 5) is the key technology here.
--   **Component Libraries:** Designing a consistent UI system (Design System). Focus on accessibility, documentation (Storybook), and versioning.
--   **Monorepos:** Using tools like Nx or Turborepo to manage multiple packages in one repository.
+-   **Micro-frontends:** Breaking a monolithic frontend into smaller, independent apps. Module Federation (Webpack 5) is the key technology here. Understanding the trade-offs: Deployment independence vs. shared dependencies/performance.
+-   **Component Libraries:** Designing a consistent UI system (Design System). Focus on accessibility, documentation (Storybook), and versioning. How to handle "Breaking Changes" across a company.
+-   **Monorepos:** Using tools like Nx or Turborepo to manage multiple packages in one repository. Managing CI/CD pipelines that only run tests for affected components.
 
 ### Deep Dive 5: Advanced CSS Masterclass
 -   **The Stacking Context:** Understanding `z-index` and what creates a new stacking context (e.g., `opacity < 1`, `transform`, `position: fixed`).
--   **CSS Layout Algorithms:** How the browser calculates sizes. `min-content`, `max-content`, `fit-content`.
--   **Responsive Design 2.0:** Moving beyond media queries to Container Queries and `@support` rules.
+-   **CSS Layout Algorithms:** How the browser calculates sizes. `min-content`, `max-content`, `fit-content`. Understanding the "intrinsic size" of elements.
+-   **Responsive Design 2.0:** Moving beyond media queries to Container Queries and `@support` rules. Building components that respond to their *parent's* width, not the screen's.
 -   **Performance in CSS:** Using `will-change` (sparingly) and avoiding expensive properties like `box-shadow` or `filter` on high-frequency animations.
+-   **CSS Houdini & Paint API:** The future of CSS where developers can write their own browser-level CSS logic.
+
+### Deep Dive 6: State Management Evolution - Signals vs. Stores
+The 2026-27 market is shifting from "Global Stores" to "Reactive Signals".
+- **The Signal Pattern**: How Solid.js, Preact, and now Angular/Vue use signals to achieve fine-grained reactivity. Why this is faster than React's "re-render everything below" model.
+- **Derived State**: Mastering memoized selectors and computed values to avoid redundant calculations.
+- **State Partitioning**: Deciding what belongs in URL params (filters, pagination), what is Server State (React Query), and what is truly Global UI State (Theme, Auth).
+
+### Deep Dive 7: Internationalization (i18n) and Localization (l10n)
+Global apps must handle more than just language translation:
+- **RTL Support**: Designing UIs for Arabic/Hebrew (using logical properties like `margin-inline-start` instead of `margin-left`).
+- **Dynamic Content**: Handling varying word lengths (German vs. English) without breaking layouts.
+- **Date/Number Formatting**: Using `Intl.DateTimeFormat` and `Intl.NumberFormat` instead of heavy libraries like Moment.js.
+- **Pluralization & Gender**: Complex grammar rules in languages like Polish or Russian.
 
 ---
 
-## 5. Common Interview Questions & Detailed Walkthroughs
+## 5. AI-Integrated Frontend Engineering (2026-27 Specialization)
+Interviewers now expect you to build *with* and *for* AI.
+
+### Building for LLM Interactions
+- **Streaming UI**: Implementing Server-Sent Events (SSE) or WebSockets to show "typing" animations for AI responses.
+- **Optimistic Rendering for AI**: How to handle latency when an AI agent is performing a multi-step task.
+- **Markdown & Code Rendering**: Sanitizing and displaying LLM-generated content safely using DOMPurify and Prism/Shiki.
+
+### Engineering with AI (The Multiplier)
+- **AI-Augmented Coding**: Using Copilot/Cursor effectively to scaffold unit tests and boilerplate.
+- **Prompt Engineering for UI**: Generating SVG icons or Tailwind layouts via natural language.
+- **Automated Accessibility Audits**: Using AI tools to catch contrast issues and missing ARIA labels before they reach production.
+
+---
+
+## 6. Common Interview Questions & Detailed Walkthroughs
 
 ### Utility Coding 1: Implement `debounce` & `throttle`
 **Debounce:** Wait until X time has passed since the last call. (Useful for search inputs).

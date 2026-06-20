@@ -114,15 +114,52 @@ The most common framework for design questions:
 -   **PM:** Focus on viability, business value, and prioritization.
 *Interview Tip: Talk about a time you resolved a conflict between these three by aligning on a shared metric (e.g., "Increasing retention" was the goal that both Eng and Design agreed on).*
 
+**The Stakeholder Matrix (Power vs. Interest):**
+- **High Power, High Interest (Manage Closely)**: Your boss, key executive sponsors.
+- **High Power, Low Interest (Keep Satisfied)**: Legal, Finance, HR.
+- **Low Power, High Interest (Keep Informed)**: Customer Support, Sales, Marketing.
+- **Low Power, Low Interest (Monitor)**: General employee population.
+
+### Deep Dive 4: Product Analytics & Data-Driven Decisions
+In 2026-27, PMs are expected to be "lite" Data Scientists.
+- **Cohort Analysis**: Tracking user behavior over time (e.g., "Do users who joined in January retain better than June?").
+- **Funnel Drop-off**: Identifying the exact screen where users abandon the flow.
+- **Segmentation**: Understanding that "average engagement" is useless; you need to look at power users vs. casual users.
+- **Causal Inference**: Moving beyond correlation to understand if Feature X *caused* the increase in revenue.
+
 ### Deep Dive 4: Product Vision and Roadmap
 -   **Vision:** A 3-5 year aspirational goal (e.g., "Organize the world's information").
 -   **Strategy:** The high-level plan to achieve the vision (e.g., "Build the most powerful search engine").
 -   **Roadmap:** The chronological list of features and milestones.
 -   **Themes:** Grouping features by goal (e.g., "Improving onboarding" or "Reducing churn").
 
+### Deep Dive 5: AI Product Management & LLM Constraints
+Managing an AI product requires a different mindset than traditional SaaS.
+- **Probabilistic vs. Deterministic**: Understanding that AI outputs aren't always the same. How to design UIs for "best-guess" results.
+- **The Cold Start for Data**: How to get initial data to train/fine-tune models before you have users.
+- **Latency & Cost**: Balancing the power of GPT-4 with the speed/cost of smaller, local models.
+- **Hallucinations & Trust**: Implementing human-in-the-loop (HITL) and guardrails to maintain user trust.
+
+### Deep Dive 6: Monetization Models & Unit Economics
+How your product makes money defines how you build it.
+- **Freemium vs. Free Trial**: When to give away the core product vs. a time-limited experience.
+- **Usage-Based Pricing**: Aligning cost with value (common in API and Cloud products).
+- **Marketplace Dynamics**: Managing supply and demand liquidity (e.g., Uber, Airbnb).
+- **The Rule of 40**: Balancing growth and profitability in mature SaaS products.
+
 ---
 
-## 5. Common Interview Questions & Detailed Walkthroughs
+## 5. Product Operations & Go-To-Market (GTM)
+Execution is where the "best" ideas actually survive.
+- **Product Ops**: The team that manages the tools, data, and processes to help the PM team be more efficient.
+- **The GTM Strategy**: 
+    - **Product-Led Growth (PLG)**: The product sells itself (e.g., Slack, Zoom).
+    - **Sales-Led Growth (SLG)**: Large enterprise contracts with high-touch sales.
+- **The Launch Checklist**: Legal/Privacy review, Marketing assets, Support training, and Performance testing.
+
+---
+
+## 6. Common Interview Questions & Detailed Walkthroughs
 
 ### Case Study 1: Product Design - "Design a Smart Kitchen for the Blind"
 1.  **Clarify:** Whole kitchen? Yes. Is it for people blind from birth? Yes.
