@@ -52,7 +52,10 @@ Writing tests before code ensures your requirements are clear and your code is v
 ## Role-Specific Applications
 - **[[02_Role_Tracks/02_Frontend_Engineer|Frontend]]**: Managing UI regression tests, versioning CSS systems, and automating Vercel/Netlify deployments.
 - **[[02_Role_Tracks/03_Backend_Engineer|Backend]]**: Automating database migrations, managing API versioning, and implementing load tests in CI.
+- **[[02_Role_Tracks/04_ML_Engineer|ML / Data Science]]**: MLOps — versioning data and models, monitoring model performance in production, implementing automated data validation.
 - **[[02_Role_Tracks/05_DevOps_Engineer|DevOps]]**: Orchestrating the entire pipeline via Jenkins, GitHub Actions, or GitLab CI.
+- **[[02_Role_Tracks/06_Data_Engineer|Data Engineering]]**: Managing data pipeline lifecycles, versioning ETL code, orchestrating workflow DAGs.
+- **[[02_Role_Tracks/07_Product_Manager|Product Management]]**: Defining product roadmaps, prioritizing backlog, managing stakeholder expectations through agile ceremonies.
 
 ## Related Topics
 - [[01_Foundations/06_Debugging_and_Testing|Debugging & Testing]]

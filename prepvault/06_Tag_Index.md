@@ -102,6 +102,20 @@ FROM #role/ml
 SORT file.name ASC
 ```
 
+### Data Scientist
+```dataview
+TABLE type AS "Type", file.folder AS "Location"
+FROM #role/data-scientist
+SORT file.name ASC
+```
+
+### Data Analyst
+```dataview
+TABLE type AS "Type", file.folder AS "Location"
+FROM #role/data-analyst
+SORT file.name ASC
+```
+
 ### DevOps / SRE
 ```dataview
 TABLE type AS "Type", file.folder AS "Location"
@@ -120,6 +134,62 @@ SORT file.name ASC
 ```dataview
 TABLE type AS "Type", file.folder AS "Location"
 FROM #role/product-mgr
+SORT file.name ASC
+```
+
+### Cybersecurity
+```dataview
+TABLE type AS "Type", file.folder AS "Location"
+FROM #role/cybersecurity
+SORT file.name ASC
+```
+
+---
+
+## 🛠️ Stack Deep Dives
+
+### Frontend Stacks
+```dataview
+TABLE type AS "Type", file.folder AS "Location"
+FROM #stack/frontend
+SORT file.name ASC
+```
+
+### Backend Stacks
+```dataview
+TABLE type AS "Type", file.folder AS "Location"
+FROM #stack/backend
+SORT file.name ASC
+```
+
+### Infrastructure & Cloud
+```dataview
+TABLE type AS "Type", file.folder AS "Location"
+FROM #stack/infrastructure
+SORT file.name ASC
+```
+
+### Data & AI Stacks
+```dataview
+TABLE type AS "Type", file.folder AS "Location"
+FROM #stack/data
+SORT file.name ASC
+```
+
+### Databases
+```dataview
+TABLE type AS "Type", file.folder AS "Location"
+FROM #stack/databases OR #stack/database
+SORT file.name ASC
+```
+
+---
+
+## 📈 Skill Maps & Roadmaps
+
+```dataview
+TABLE type AS "Type", file.folder AS "Location"
+FROM #roadmap
 SORT file.name ASC
 ```
 

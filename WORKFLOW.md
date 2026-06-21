@@ -1,3 +1,8 @@
+<!-- managed:linked-repos -->
+## Linked Repositories
+- mrxsierra/CS
+<!-- /managed:linked-repos -->
+
 # PrepVault Code Workflow
 
 ## Repository

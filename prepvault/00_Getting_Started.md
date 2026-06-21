@@ -23,11 +23,21 @@ created: 2026-06-10
 | [[01_Foundations/07_Language_Internals/Index\|Language Internals]] | **V8 Event Loop, JVM Garbage Collection, Python GIL, Go Scheduler** | `#foundations/internals` |
 | [[01_Foundations/08_AI_for_Engineers\|AI Orchestration]] | **AI as a Multiplier**, Prompt Engineering for Architecture, Rules of AI Co-habitation | `#ai/orchestration` |
 
-### 🎯 Career Execution
+### 🎯 Role Tracks & Skill Maps
 | Section | Focus Areas |
 |---------|-------------|
-| [[02_Role_Tracks/00_Career_Execution\|Career Strategy]] | **90-Day Execution Engine**, Resume Tailoring (ATS), LinkedIn Warm Referrals |
-| [[06_FAQ_and_Checklist\|FAQ & Checklist]] | **Do's and Don'ts**, Career Gaps, Tier-3 College Strategies |
+| [[02_Role_Tracks/01_General_SWE|Role Tracks]] | **Specialized Tracks**: Frontend, Backend, ML, Data Science, DevOps, Cybersecurity |
+| [[09_Skill_Maps/01_Frontend_Roadmap|Skill Maps]] | **Visual Roadmaps**: Learning paths and prerequisite trees for each track |
+| [[02_Role_Tracks/00_Career_Execution|Career Strategy]] | **90-Day Execution Engine**, Resume Tailoring (ATS), LinkedIn Warm Referrals |
+
+### 🛠️ Stack Deep Dives — Framework Mastery
+| Stack | Topics |
+|-------|--------|
+| [[08_Stack_Deep_Dives/01_Frontend_Stack/Index|Frontend]] | React, Next.js, TypeScript, Vite |
+| [[08_Stack_Deep_Dives/02_Backend_Stack/Index|Backend]] | Node.js, FastAPI, Go, Rust, API Design |
+| [[08_Stack_Deep_Dives/03_Data_AI_Stack/Index|Data & AI]] | Pandas, ML, Deep Learning, LLMs, Spark |
+| [[08_Stack_Deep_Dives/04_DevOps_Cloud_Stack/Index|DevOps & Cloud]] | Docker, Kubernetes, Terraform, CI/CD |
+| [[08_Stack_Deep_Dives/05_Databases_Stack/Index|Databases]] | PostgreSQL, MongoDB, Redis |
 
 ### 🎤 Interview Formats
 | Format | What to Expect |

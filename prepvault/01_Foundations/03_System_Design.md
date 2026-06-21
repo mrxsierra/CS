@@ -46,9 +46,12 @@ You are not expected to design AWS from scratch, but you must master these "Smal
 - **Step 3: Verification**: How do we handle 10,000 concurrent uploads? (Async Workers + S3 Presigned URLs).
 
 ## Role-Specific Applications
+- **[[02_Role_Tracks/02_Frontend_Engineer|Frontend]]**: Implementing client-side caching strategies, understanding CDN edge caching, handling optimistic UI updates.
 - **[[02_Role_Tracks/03_Backend_Engineer|Backend]]**: Designing schemas, optimizing slow queries, and managing distributed state.
 - **[[02_Role_Tracks/04_ML_Engineer|ML/Data]]**: Designing feature stores and scalable model inference pipelines.
+- **[[02_Role_Tracks/05_DevOps_Engineer|DevOps]]**: Orchestrating containers (Kubernetes), implementing service meshes, managing CI/CD for distributed components.
 - **[[02_Role_Tracks/06_Data_Engineer|Data Engineering]]**: Choosing between OLTP (Transaction) and OLAP (Analytics) databases.
+- **[[02_Role_Tracks/07_Product_Manager|Product Management]]**: Understanding technical feasibility, evaluating build vs. buy decisions, estimating engineering effort.
 
 ## Related Topics
 - [[01_Foundations/01_DSA|DSA]]
