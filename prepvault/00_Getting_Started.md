@@ -27,7 +27,7 @@ created: 2026-06-10
 | Section | Focus Areas |
 |---------|-------------|
 | [[02_Role_Tracks/01_General_SWE|Role Tracks]] | **Specialized Tracks**: Frontend, Backend, ML, Data Science, DevOps, Cybersecurity |
-| [[09_Skill_Maps/01_Frontend_Roadmap|Skill Maps]] | **Visual Roadmaps**: Learning paths and prerequisite trees for each track |
+| [[09_Skill_Maps/Index|Skill Maps]] | **Visual Roadmaps**: Learning paths and prerequisite trees for each track |
 | [[02_Role_Tracks/00_Career_Execution|Career Strategy]] | **90-Day Execution Engine**, Resume Tailoring (ATS), LinkedIn Warm Referrals |
 
 ### 🛠️ Stack Deep Dives — Framework Mastery

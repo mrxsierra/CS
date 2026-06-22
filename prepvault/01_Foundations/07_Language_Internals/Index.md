@@ -8,7 +8,7 @@ created: 2026-06-10
 
 To pass 2026-27 interviews, you must know at least one language deeply enough to explain its behavior under the hood. This includes memory allocation, garbage collection, and concurrency models.
 
-## Core Language Stubs
+## Core Language Guides
 - [[01_Foundations/07_Language_Internals/JS_TS|JavaScript / TypeScript]]
 - [[01_Foundations/07_Language_Internals/Java|Java (JVM)]]
 - [[01_Foundations/07_Language_Internals/Python|Python]]

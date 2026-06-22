@@ -179,7 +179,7 @@ SORT file.name ASC
 ### Databases
 ```dataview
 TABLE type AS "Type", file.folder AS "Location"
-FROM #stack/databases OR #stack/database
+FROM #stack/databases
 SORT file.name ASC
 ```
 

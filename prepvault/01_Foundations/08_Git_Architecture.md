@@ -58,6 +58,12 @@ Git identifies every object by its SHA-1 hash (a 40-character hexadecimal string
 - **"How does Git handle file renames?"**: It doesn't explicitly track renames; it detects them by comparing blobs (content similarity).
 - **"What is a 'detached HEAD'?"**: When HEAD points directly to a commit instead of a branch pointer.
 
+## Role-Specific Applications
+- **Frontend/Backend**: Trunk-based development, handling merge conflicts in generated code (e.g., `package-lock.json`), using interactive rebase to clean up feature branches before PR.
+- **DevOps**: Managing infrastructure as code (IaC), GitOps patterns (ArgoCD/Flux), implementing branch protection rules and automated CI triggers.
+- **ML Engineer**: Versioning datasets and models using DVC (Data Version Control) which mimics Git architecture for large files.
+- **Security**: Auditing commit history for secrets, signing commits with GPG, understanding `git filter-repo` to purge sensitive data from history.
+
 ## Related Topics
 - [[01_Foundations/02_SDLC|SDLC (CI/CD)]]
 - [[01_Foundations/03_System_Design|System Design (Storage)]]
