@@ -53,6 +53,13 @@ FROM #foundations/networking
 SORT file.name ASC
 ```
 
+### Mathematics, Logic & Stats
+```dataview
+TABLE type AS "Type", file.folder AS "Location"
+FROM #foundations/math OR #foundations/logic OR #foundations/combinatorics OR #foundations/probability OR #foundations/graph-theory OR #foundations/linear-algebra OR #foundations/calculus OR #foundations/statistics
+SORT file.name ASC
+```
+
 ### SDLC & DevOps Basics
 ```dataview
 TABLE type AS "Type", file.folder AS "Location"

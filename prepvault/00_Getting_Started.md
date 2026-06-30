@@ -20,6 +20,10 @@ created: 2026-06-10
 | [[01_Foundations/02_SDLC\|SDLC & DevOps]] | Agile, **Trunk-Based Development, Interactive Rebase**, CI/CD Pipelines | `#foundations/sdlc` |
 | [[01_Foundations/03_System_Design\|System Design]] | **HLD vs LLD, Database Isolation Levels**, Indexing (B-Trees vs LSM), CAP Theorem | `#foundations/system-design` |
 | [[01_Foundations/06_Debugging_and_Testing\|Debugging & Testing]] | **Systematic Debugging**, Unit Testing with Mocks, Test-First Mindset | `#foundations/debugging` |
+| [[01_Foundations/04_Operating_Systems\|Operating Systems]] | Processes, **Memory Management, Concurrency Primitives**, Scheduling | `#foundations/os` |
+| [[01_Foundations/05_Networking\|Networking]] | TCP/IP, **HTTP/3 (QUIC)**, DNS, Load Balancers, CDN | `#foundations/networking` |
+| [[01_Foundations/10_Mathematics_for_Computer_Science\|Discrete Math]] | **Logic, Combinatorics, Probability**, Graph Theory, Set Theory | `#foundations/math` |
+| [[01_Foundations/11_Mathematics_for_AI_ML\|AI/ML Math]] | **Linear Algebra, Multivariate Calculus**, Stats, Bayesian Inference | `#foundations/math` |
 | [[01_Foundations/07_Language_Internals/Index\|Language Internals]] | **V8 Event Loop, JVM Garbage Collection, Python GIL, Go Scheduler** | `#foundations/internals` |
 | [[01_Foundations/08_AI_for_Engineers\|AI Orchestration]] | **AI as a Multiplier**, Prompt Engineering for Architecture, Rules of AI Co-habitation | `#ai/orchestration` |
 
