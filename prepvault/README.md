@@ -62,14 +62,14 @@ Purchase additional role tracks or company guides individually:
 
 1. **Install [Obsidian](https://obsidian.md/)** (free)
 2. **Open this vault** → Click "Open folder as vault" and select the `prepvault/` folder
-3. **Open `00_Getting_Started.md`** → Your navigation hub
+3. **Open `00_getting_started.md`** → Your navigation hub
 4. **Enable plugins** → Obsidian will prompt you; trust the community plugins (Dataview, Kanban, Excalidraw)
 
 ### Tips
 - **Graph View**: See the entire knowledge graph — watch how concepts connect to roles
 - **Backlinks**: Every note shows which other notes reference it
 - **Tag Pane**: Click any `#foundations/dsa` or `#role/frontend` to filter
-- **Dataview Queries**: The Tag Index (`06_Tag_Index.md`) uses Dataview to auto-list all notes by tag
+- **Dataview Queries**: The Tag Index (`06_tag_index.md`) uses Dataview to auto-list all notes by tag
 
 ---
 
